@@ -1,0 +1,11 @@
+hdfs dfs -mkdir -p restaurant_hotspots/liquor_dataset
+tail -n +2 nyc-license.csv>nyc-license_header_less.csv
+hdfs dfs -put nyc-license_header_less.csv restaurant_hotspots/liquor_dataset/
+--for hive shell
+beeline -u jdbc:hive2://quickstart:10000/default -n cloudera -d org.apache.hive.jdbc.HiveDriver
+--table command goes below this statement
+
+--to start impala
+sudo service impala-state-store start
+sudo service impala-catalog start
+sudo service impala-server start
