@@ -1,0 +1,10 @@
+#!/bin/bash
+
+NUM_MONTHS="01 02 03 04 05 06 07 08 09 10 11 12"
+TAXI_COLOR="yellow green"
+
+for c in ${TAXI_COLOR}; do
+	for m in ${NUM_MONTHS}; do  
+		wget https://storage.googleapis.com/tlc-trip-data/2015/${c}_tripdata_2015-${m}.csv
+	done
+done
