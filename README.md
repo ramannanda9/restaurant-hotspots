@@ -1,2 +1,2 @@
-# restaurant-hotspots
-This project determines the restaurant hotspots in new york 
+# restaurant-taxi-hotspots
+This project determines the restaurant taxi hotspots in new york 
