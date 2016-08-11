@@ -2,7 +2,7 @@
 In this project we tried to ascertain the relationship between yelp ratings, taxi pickups and dropoffs with the tip_amount.
 The spatial join is performed with yelp data, nyc_liquor_dataset and taxi dataset for yellow cabs.
 
-The main table after the join is yelp_taxi_stats and the script to join the dataset is located under taxi folder.
+The main table after the join is yelp_taxi_stats and the script to join the dataset is located under Spatial Join folder.
 Its structure and schema is mentioned below.
 
 |Column_Name          |  Type   |
@@ -49,5 +49,5 @@ As we can see that average_of_ratings has a positive coefficient and is the high
 
 * To run the code just copy paste ``HotspotAnalytics.scala`` and then invoke the method ``HotspotAnalytics.runRegressions()``
 * You need to ensure to run the table scripts and that the data is there in the hive table.
-* Visualizations showing the top 10 hotspots is top10.png and the data used to produce that is also there in the top directory.
+* Visualizations showing the top 10 hotspots is top10.png and the data used to produce that is there under the Analytics directory.
 * We used hue for Visualizations.
