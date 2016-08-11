@@ -57,10 +57,10 @@ val taxi_grid_drop= taxi_night_pick.map(r => ( ((r(10).toDouble - 40.7 )/0.002).
 // (7530,4)
 
 
-// Calculating the total fare amount of Dropoffs for each grid
-val taxi_night_fare = taxi_wh.map(_.split(",")).filter(row => row(1).substring(11,13).toInt <= 3 || row(1).substring(11,13).toInt >= 22).filter(r=> r(9).toDouble >= -74.02 && r(9).toDouble <= -73.9).filter(r => r(10).toDouble >= 40.7 && r(10).toDouble <= 40.85 ).filter(r(12).toFloat > 0.0 )
+// Calculating the total tip amount of Dropoffs for each grid
+val taxi_night_fare = taxi_wh.map(_.split(",")).filter(row => row(1).substring(11,13).toInt <= 3 || row(1).substring(11,13).toInt >= 22).filter(r=> r(9).toDouble >= -74.02 && r(9).toDouble <= -73.9).filter(r => r(10).toDouble >= 40.7 && r(10).toDouble <= 40.85 ).filter(r(15).toFloat > 0.0 )
 
-val taxi_grid_fare= taxi_night_pick.map(r => ( ((r(10).toDouble - 40.7 )/0.002).toInt *120 + ((r(9).toDouble + 74.02 )/0.001).toInt , r(12).asFloat )).reduceByKey(_+_)
+val taxi_grid_fare= taxi_night_pick.map(r => ( ((r(10).toDouble - 40.7 )/0.002).toInt *120 + ((r(9).toDouble + 74.02 )/0.001).toInt , r(15).toFloat )).reduceByKey(_+_)
 
 // taxi_grid_fare.take(5).foreach(println)
 // (1110,34968.3)                                                                                                                                                           
